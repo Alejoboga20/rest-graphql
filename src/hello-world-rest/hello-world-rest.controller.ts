@@ -1,4 +1,4 @@
-import { Controller, Get, ParseIntPipe, Query } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { getRandomNumber } from 'src/common/get-random-number';
 
 @Controller('hello-world-rest')

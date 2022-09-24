@@ -6,5 +6,5 @@ type Query {
   message: String!
 
   """Return dice value"""
-  randomDice: Float!
+  randomDice(max: Int): Int!
 }

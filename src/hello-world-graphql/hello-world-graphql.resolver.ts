@@ -1,4 +1,5 @@
-import { Query, Resolver } from '@nestjs/graphql';
+import { Args, Int, Query, Resolver } from '@nestjs/graphql';
+import { getRandomNumber } from 'src/common/get-random-number';
 
 @Resolver()
 export class HelloWorldGraphqlResolver {
@@ -7,8 +8,10 @@ export class HelloWorldGraphqlResolver {
     return 'Hello World GraphQL';
   }
 
-  @Query(() => Number, { name: 'randomDice', description: 'Return dice value' })
-  getRandomNumber(): number {
-    return 10;
+  @Query(() => Int, { name: 'randomDice', description: 'Return dice value' })
+  getRandomNumber(
+    @Args('max', { type: () => Int, nullable: true }) max = 6,
+  ): number {
+    return getRandomNumber(+max);
   }
 }
