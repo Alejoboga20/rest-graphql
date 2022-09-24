@@ -4,5 +4,7 @@
 
 type Query {
   message: String!
+
+  """Return dice value"""
   randomDice: Float!
 }

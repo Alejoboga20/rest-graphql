@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, ParseIntPipe, Query } from '@nestjs/common';
+import { getRandomNumber } from 'src/common/get-random-number';
 
 @Controller('hello-world-rest')
 export class HelloWorldRestController {
@@ -10,7 +11,7 @@ export class HelloWorldRestController {
   }
 
   @Get('dice')
-  getRandomNumber() {
-    return 10;
+  getRandomNumber(@Query('max') max = 6): number {
+    return getRandomNumber(+max);
   }
 }
