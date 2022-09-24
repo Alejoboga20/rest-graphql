@@ -6,4 +6,9 @@ export class HelloWorldGraphqlResolver {
   getHelloWorld(): string {
     return 'Hello World GraphQL';
   }
+
+  @Query(() => Number, { name: 'randomDice' })
+  getRandomNumber(): number {
+    return 10;
+  }
 }

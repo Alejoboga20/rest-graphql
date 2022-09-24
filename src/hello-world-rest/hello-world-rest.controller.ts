@@ -8,4 +8,9 @@ export class HelloWorldRestController {
       message: 'Hello World',
     };
   }
+
+  @Get('dice')
+  getRandomNumber() {
+    return 10;
+  }
 }

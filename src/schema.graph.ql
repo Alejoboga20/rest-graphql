@@ -4,4 +4,5 @@
 
 type Query {
   message: String!
+  randomDice: Float!
 }
